@@ -16,4 +16,5 @@ public enum Resolucion {
     public Dimension getDimension() {
         return this.dimension;
     }
+
 }
