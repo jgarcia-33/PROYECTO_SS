@@ -13,10 +13,17 @@ public abstract class Escena implements ElementoJuego{
     }
     protected abstract void añadirObjetosIniciales();
     public void añadir(GameObject obj){
-
+        obj.escena=this;
+        obj.juego=this.juego;
+        obj.consola=this.consola;
+        this.objetos.add(obj);
+        obj.inicializar();
     }
     public void retirar(GameObject obj){
-
+        obj.finalizar();
+        this.objetos.remove(obj);
+        obj.juego=null;
+        obj.consola=null;
     }
     @Override
     public void inicializar(){
@@ -28,10 +35,14 @@ public abstract class Escena implements ElementoJuego{
     }
     @Override
     public void ejecutarFrame(){
-
+        for (int i = 0; i < this.objetos.size(); i++) {
+            this.objetos.get(i).ejecutarFrame();
+        }
     }
     @Override
     public void finalizar(){
-
+        while (!this.objetos.isEmpty()){
+            this.retirar(this.objetos.get(0));
+        }
     }
 }
