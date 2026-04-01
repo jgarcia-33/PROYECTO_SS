@@ -3,7 +3,9 @@ public class GameObjectTesteador extends GameObject {
     private int frameCounter;
 
     public GameObjectTesteador(){
+        super();
         this.inicializado=false;
+        this.frameCounter=0;
     }
     public boolean inicializado(){
         return this.inicializado;
