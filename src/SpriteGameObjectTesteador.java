@@ -34,6 +34,6 @@ public class SpriteGameObjectTesteador extends GameObject{
 
     @Override
     public void finalizar() {
-
+        consola.getCapaSprites().eliminarSprite(this.sprite);
     }
 }
