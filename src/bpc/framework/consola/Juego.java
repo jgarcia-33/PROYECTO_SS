@@ -1,3 +1,5 @@
+package bpc.framework.consola;
+
 import bpc.daw.consola.Consola;
 import bpc.daw.consola.Teclado;
 
@@ -9,7 +11,7 @@ public class Juego {
     private boolean detener;
     private Resolucion resolucion;
 
-    public void iniciar(Escena e,Resolucion r){
+    public void iniciar(Escena e, Resolucion r){
         this.consola = new Consola();
         this.resolucion = r;
         this.setEscena(e);

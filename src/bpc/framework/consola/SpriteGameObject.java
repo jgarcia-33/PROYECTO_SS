@@ -1,3 +1,5 @@
+package bpc.framework.consola;
+
 import bpc.daw.consola.Sprite;
 
 import java.awt.*;
