@@ -1,9 +1,11 @@
+package bpc.framework.consola;
+
 import bpc.daw.consola.Sprite;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class SpriteGameObjectTesteador extends GameObject{
+public class SpriteGameObjectTesteador extends GameObject {
     private Sprite sprite;
 
     public SpriteGameObjectTesteador(Image imagen, int x, int y){

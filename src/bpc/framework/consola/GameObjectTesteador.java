@@ -1,3 +1,5 @@
+package bpc.framework.consola;
+
 public class GameObjectTesteador extends GameObject {
     private boolean inicializado;
     private int frameCounter;

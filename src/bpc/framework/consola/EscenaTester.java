@@ -1,4 +1,6 @@
-public class EscenaTester extends Escena{
+package bpc.framework.consola;
+
+public class EscenaTester extends Escena {
     private GameObject tester;
 
     public EscenaTester(GameObject t){
