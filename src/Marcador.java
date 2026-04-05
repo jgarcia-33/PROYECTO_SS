@@ -1,3 +1,4 @@
+import bpc.framework.consola.*;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
