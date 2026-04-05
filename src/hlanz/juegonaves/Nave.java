@@ -1,5 +1,6 @@
+package hlanz.juegonaves;
+
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.time.Instant;
 import bpc.daw.consola.*;
 

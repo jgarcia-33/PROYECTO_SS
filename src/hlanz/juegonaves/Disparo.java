@@ -1,11 +1,14 @@
+package hlanz.juegonaves;
+
 import java.awt.*;
+import bpc.framework.consola.*;
 
 public class Disparo extends SpriteGameObject{
 
     private int idJugador;
     private int vx;
     private int vy;
-    private Enemigo ;
+    private Enemigo enemigo;
 
     public Disparo(int id, int x, int y, int vx, int vy) {
         super(CacheImagenes.getImagen("disparo.png"),x , y);
@@ -22,7 +25,8 @@ public class Disparo extends SpriteGameObject{
             escena.retirar(this);
             this.finalizar();
         }
-        for (Enemigo e: escena.objetos){
+
+        /*for (GameObject e: escena.objetos){
             if (e instanceof Enemigo) {
                 //aqui se comprobaria si colisionan o no, pero actualmente no se me ocurre como hacerlo
                 /*
@@ -33,8 +37,5 @@ public class Disparo extends SpriteGameObject{
                     this.finalizar();
                 }
                 */
-            }
-        }
     }
-
 }
