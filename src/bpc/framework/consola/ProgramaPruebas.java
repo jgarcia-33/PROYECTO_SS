@@ -1,3 +1,5 @@
+package bpc.framework.consola;
+
 import java.awt.*;
 
 public class ProgramaPruebas {
@@ -6,6 +8,6 @@ public class ProgramaPruebas {
         SpriteGameObjectTesteador testeador = new SpriteGameObjectTesteador(imagen,100,100);
         EscenaTester escenaTester = new EscenaTester(testeador);
         Juego juego = escenaTester.juego;
-        juego.iniciar(escenaTester,Resolucion.PANTALLA_COMPLETA);
+        juego.iniciar(escenaTester, Resolucion.PANTALLA_COMPLETA);
     }
 }

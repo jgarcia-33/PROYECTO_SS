@@ -1,9 +1,11 @@
+package bpc.framework.consola;
+
 import bpc.daw.consola.Consola;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Escena implements ElementoJuego{
+public abstract class Escena implements ElementoJuego {
     protected Juego juego;
     protected Consola consola;
     private List<GameObject> objetos;

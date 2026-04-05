@@ -1,3 +1,5 @@
+package bpc.framework.consola;
+
 import java.awt.*;
 
 public enum Resolucion {
