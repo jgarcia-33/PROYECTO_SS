@@ -1,3 +1,5 @@
+package hlanz.juegonaves;
+
 import bpc.framework.consola.*;
 import java.awt.Graphics;
 import java.awt.Color;

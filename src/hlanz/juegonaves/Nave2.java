@@ -1,6 +1,8 @@
+package hlanz.juegonaves;
+
 import java.awt.*;
 
-public class Nave2 extends Nave{
+public class Nave2 extends Nave {
 
     public Nave2(int ti, int tde, int tdi, int v, Image image) {
         super(ti, tde, tdi,  3, CacheImagenes.getImagen(nave2.png));

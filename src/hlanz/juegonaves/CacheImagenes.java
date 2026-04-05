@@ -1,3 +1,5 @@
+package hlanz.juegonaves;
+
 import java.awt.Image;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +21,7 @@ public class CacheImagenes {
         return instancia;
     }
 
-    public Image getImagen(String nombreImagen) {
+    public static Image getImagen(String nombreImagen) {
         if (cache.containsKey(nombreImagen)) {
             return cache.get(nombreImagen);
         }
