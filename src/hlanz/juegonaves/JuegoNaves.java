@@ -1,6 +1,10 @@
 package hlanz.juegonaves;
 
 import bpc.framework.consola.*;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +27,7 @@ public class JuegoNaves extends Escena {
         if (obj instanceof Enemigo) {
             this.enemigos.add((Enemigo) obj);
         }
+
     }
 
     @Override
@@ -38,17 +43,27 @@ public class JuegoNaves extends Escena {
         this.añadir(new ControladorFinJuego());
         this.añadir(new Fondo(2));
 
-        this.añadir(new Nave1(37, 39, 32));
-        this.añadir(new Nave2(65, 68, 87));
+        this.añadir(new Nave1(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W));
+        this.añadir(new Nave2(KeyEvent.VK_J, KeyEvent.VK_L, KeyEvent.VK_I));
 
-        this.añadir(new Enemigo1(100, 100, 5));
-        this.añadir(new Enemigo1(300, 100, 5));
+        for (int i = 0; i < 10; i++) {
+            this.añadir(new Enemigo1(Toolkit.getDefaultToolkit().getScreenSize().width*i/10, 100, 5));
+        }
+
+        try {
+            for (int i = 1; i < 6; i++) {
+                this.añadir(new Enemigo2(0, 0, 300*i, 300, 100, 10));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         this.añadir(new Marcador());
     }
 
     public static void main(String[] args) {
         Juego j = new Juego();
-        j.iniciar(new JuegoNaves(), Resolucion.VENTANA_FULLHD);
+        JuegoNaves jNaves = new JuegoNaves();
+        j.iniciar(jNaves, Resolucion.VENTANA_FULLHD);
     }
 }

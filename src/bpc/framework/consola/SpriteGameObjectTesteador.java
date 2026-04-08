@@ -21,7 +21,7 @@ public class SpriteGameObjectTesteador extends GameObject {
     @Override
     public void ejecutarFrame() {
         if (consola.getTeclado().teclaPulsada(KeyEvent.VK_LEFT)){
-            sprite.moverX(20);
+            sprite.moverX(-20);
         }
         if (consola.getTeclado().teclaPulsada(KeyEvent.VK_RIGHT)){
             sprite.moverX(20);

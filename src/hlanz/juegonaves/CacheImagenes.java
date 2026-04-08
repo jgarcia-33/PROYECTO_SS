@@ -8,10 +8,11 @@ import javax.imageio.ImageIO;
 public class CacheImagenes {
 
     private static CacheImagenes instancia = null;
-    private Map<String, Image> cache;
+    private Map<String, Image> imagenes;
+
 
     private CacheImagenes() {
-        this.cache = new HashMap<>();
+        this.imagenes = new HashMap<>();
     }
 
     public static CacheImagenes getInstancia() {
@@ -21,19 +22,22 @@ public class CacheImagenes {
         return instancia;
     }
 
-    public static Image getImagen(String nombreImagen) {
-        if (cache.containsKey(nombreImagen)) {
-            return cache.get(nombreImagen);
+    public Image getImagen(String nombreImagen) {
+        Image salida = null;
+        if (this.imagenes.containsKey(nombreImagen)) {
+            salida = imagenes.get(nombreImagen);
         }
 
-        try {
-            String rutaCompleta = "/imagenes/" + nombreImagen;
-            Image imagenCargada = ImageIO.read(getClass().getResource(rutaCompleta));
-            cache.put(nombreImagen, imagenCargada);
-            return imagenCargada;
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            return null;
+        if (salida==null) {
+            try {
+                String rutaCompleta = "/imagenes/" + nombreImagen;
+                Image imagenCargada = ImageIO.read(getClass().getResource(rutaCompleta));
+                imagenes.put(nombreImagen, imagenCargada);
+                salida = imagenCargada;
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
         }
+        return salida;
     }
 }
