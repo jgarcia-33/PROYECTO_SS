@@ -5,7 +5,7 @@ import bpc.daw.consola.Sprite;
 import java.awt.*;
 
 public abstract class SpriteGameObject extends GameObject {
-    private Sprite sprite;
+    public Sprite sprite;
     private Image imagen;
     private Point puntoInicial;
 
@@ -18,20 +18,14 @@ public abstract class SpriteGameObject extends GameObject {
 
     @Override
     public void inicializar() {
-        this.sprite=consola.getCapaSprites().crearSprite(imagen,null,puntoInicial.x, puntoInicial.y);
+        this.sprite=consola.getCapaSprites().crearSprite(imagen,new Rectangle(imagen.getWidth(null),imagen.getHeight(null)),puntoInicial.x, puntoInicial.y);
     }
 
     public int getX(){
         return this.sprite.getX();
     }
     public int getY(){
-        return this.sprite.getX();
-    }
-    public int getAnchura(){
-        return this.imagen.getWidth(null);
-    }
-    public int getAltura(){
-        return this.imagen.getHeight(null);
+        return this.sprite.getY();
     }
     public void moverX(int cx){
         this.sprite.moverX(cx);
@@ -46,6 +40,13 @@ public abstract class SpriteGameObject extends GameObject {
     public void setY(int y){
         int cantidad = y - sprite.getY();
         this.sprite.moverY(cantidad);
+    }
+
+    public int getAnchura(){
+        return this.imagen.getWidth(null);
+    }
+    public int getAltura(){
+        return this.imagen.getHeight(null);
     }
 
     @Override
