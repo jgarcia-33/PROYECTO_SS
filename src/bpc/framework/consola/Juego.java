@@ -3,6 +3,7 @@ package bpc.framework.consola;
 import bpc.daw.consola.Consola;
 import bpc.daw.consola.Teclado;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Juego {
@@ -31,8 +32,11 @@ public class Juego {
              */
             consola.esperarSiguienteFrame();
         }
-        if(!this.detener)
-        consola.getCapaTexto().print(0,4,"Juego finalizado, pulsa intro para cerrar");
+        if(!this.detener) {
+            consola.getCapaTexto().setColorTexto(Color.GREEN);
+            consola.getCapaTexto().setColorFondo(Color.BLACK);
+            consola.getCapaTexto().print(2, 10, "Juego finalizado, pulsa intro para cerrar");
+        }
     }
 
     public void setEscena(Escena e){
